@@ -1,10 +1,29 @@
-class Carrinho:
-    def __init__(self, nome, cor, img_link):
+class Usuario:
+    def __init__(self, id, nome, senha, status):
+        self.id = id
         self.nome = nome
-        self.cor = cor
-        self.img_link = img_link
+        self.senha = senha
+        self.status = status
 
-octane = Carrinho('octane', 'preto', 'https://static.wikia.nocookie.net/rocketleague/images/7/71/Octane_hero_art.jpg')
-fennec = Carrinho('fennec', 'titanium white', 'https://static.wikia.nocookie.net/rocketleague/images/a/a6/Fennec_hero_art.jpg')
+u1 = Usuario(1, "renan", '123', "admin")
+u2 = Usuario(2, "cleiton", '321', "user")
+lista = [u1, u2]
 
-carrinhos = [octane, fennec]
+def verifc_senha(usuario, sen):
+    ident = 0
+    for i in lista:
+        if i.nome == usuario and i.senha == sen:
+            ident = 1
+            break
+    return ident
+
+def verifc_admin(usuario):
+    ident_1 = 0
+    for i in lista:
+        if i.nome == usuario and i.status == 'admin':
+            ident_1 = 1
+            break
+    return ident_1
+            
+    
+

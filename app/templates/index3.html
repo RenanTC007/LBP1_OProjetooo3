@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin ou User</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="table-section">
+        {% if admin == 1 %}
+            <center><h1>Olá, {{ nome }}, seja bem bem vindo ao setor exclusivo dos adminstradores</h1></center>
+        {% endif %}
+        {% if admin == 0 %}
+            <center><h1>Ops, você não está cadastrado como um adminstrador, então não é possível acessar essa página</center>
+        {% endif %}
+        {% if user == 1 %}
+            <center><h1>Olá, {{ nome }}, seja bem bem vindo a pagina de usuários do site</h1></center>
+        {% endif %}
+        
+    </div>
+</body>
+</html>

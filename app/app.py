@@ -1,12 +1,19 @@
-from flask import Flask, render_template
-from controllers import c_1
+from flask import Flask
+from controllers.c_1 import cad_controller
 
 app = Flask(__name__)
-app.register_blueprint(c_1.c)
+app.secret_key = 'sua-chave-secreta'
+app.register_blueprint(cad_controller)
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+@app.before_request
+def aviso_before():
+    print("Executa antes da requisição")
+
+@app.after_request
+def aviso_after(response):
+    print("Depois da requisição e antes da resposta")
+    return response
 
 if __name__ == '__main__':
     app.run(debug=True)
+

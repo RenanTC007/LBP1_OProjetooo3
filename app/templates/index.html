@@ -1,11 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <h1>Hello World!</h1>
+    <div class="container">
+        <div class="form-section">
+            <h2> login</h2>
+            <form action="/login" method="post" id="itemForm">
+                <label for="campo1">Nome:</label>
+                <input type="text" minlength="3" id="campo1" name="username" required>
+
+                <label for="campo3">Senha:</label>
+                <input type="password" id="campo3" name="senha" required>
+                <br>
+                <button type="submit" class="btn-add">Entrar</button>
+            </form>
+            <br>
+            {% if valor == 1 %}
+                <h4>Usuario ou senha não identificados, tente novamente!</h4>
+            {% endif %}
+            {% if fora == 1 %}
+                <h4>Você não está logado para acessar esta pagina, faça seu login aqui!</h4>
+            {% endif %}
+        </div> 
+    </div>
 </body>
+
 </html>
