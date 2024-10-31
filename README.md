@@ -1,7 +1,4 @@
-# Rocket-Piton
-
-Desenvolvedores do projeto:
-* João Victor Santos
+Desenvolvedor do projeto:
 * Renan Trajano da Conceição
 
 ## Comandos
