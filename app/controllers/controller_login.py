@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, Blueprint, session
-from models.m_1 import *
+from models.modelos_login import *
 
 cad_controller = Blueprint('logando', __name__)
 

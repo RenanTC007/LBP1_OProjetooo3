@@ -7,11 +7,11 @@ class Usuario:
 
 u1 = Usuario(1, "renan", '123', "admin")
 u2 = Usuario(2, "cleiton", '321', "user")
-lista = [u1, u2]
+lista_users = [u1, u2]
 
 def verifc_senha(usuario, sen):
     ident = 0
-    for i in lista:
+    for i in lista_users:
         if i.nome == usuario and i.senha == sen:
             ident = 1
             break
@@ -19,7 +19,7 @@ def verifc_senha(usuario, sen):
 
 def verifc_admin(usuario):
     ident_1 = 0
-    for i in lista:
+    for i in lista_users:
         if i.nome == usuario and i.status == 'admin':
             ident_1 = 1
             break
