@@ -5,10 +5,7 @@ cad_controller = Blueprint('logando', __name__)
 
 @cad_controller.route('/')
 def index():
-    if 'username' in session:
-        return render_template('index2.html', nome = session['username'])
-    else:
-        return render_template('index.html')
+    return render_template('index.html')
 
 @cad_controller.route('/login', methods=['POST', 'GET'])
 def login():
