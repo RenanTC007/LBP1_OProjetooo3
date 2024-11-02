@@ -14,22 +14,30 @@
 
 <body>
     <div class="table-section">
-        <form action="/carrinho" method="post">
-            <h1>Começe suas compras:</h1><br>
-            <label for="campo1">Produto1
-            <input type="number" placeholder="Digite quanto deseja" name="campo1">
-            </label>
-            <label for="campo1">Produto2
-            <input type="number" placeholder="Digite quanto deseja" name="campo2">
-            </label>
-            <label for="campo1">Produto3
-            <input type="number" placeholder="Digite quanto deseja" name="campo3">
-            </label>
+            {% for i in produtos %}
+            <tr>
+                <th>{{i.nome}}</th>
+                <th>{{i.preco}}</th>
+                <th><a class="btn-edit" href="/compras/add?id={{i.id}}">Adicionar</a>
+                <a class="btn-edit"  href="/compras/del?id={{i.id}}">Remover</a></th><br>
+            </tr><br>
+            {% endfor %}
+        </tbody>
+    </table>
+<br>
+<br>
 
-            <button type="submit" class="btn-add">Adicionar ao carrinho</button>
-            
-        </form>
+<center><h1>Carrinho</h1><br>
+    <ul>
+	{% for i in cesto %}
+        {% if i.qtd != "0" %}
+		    <p>{{i.nome}} = {{i.total}}({{i.qtd}})</p><br>
+        {% endif %}
+	{% endfor %}
+    </ul></center>
     </div>
 </body>
+</html>
+
 
 </html>

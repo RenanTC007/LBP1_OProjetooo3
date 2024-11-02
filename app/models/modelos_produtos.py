@@ -1,11 +1,7 @@
 class Produto:
-    def __init__(self, id, nome, imagem, preco):
+    def __init__(self, id, nome, preco):
         self.id = id
         self.nome = nome
-        self.imagem = imagem
         self.preco = preco
 
-listProdutos = []
-listProdutos.append(Produto("1", "Headset JBL Tune 520BT", "jbl", 239.00))
-listProdutos.append(Produto("2", "Apple AirPods (3ª geração)​​​​​​", "apple", 1405.98))
-listProdutos.append(Produto("3", "Samsung Galaxy Buds3", "samsung", 1249.00))
+produtos = [Produto("1", "Xbox360", 600.00), Produto("2", "Ps2​", 500.00), Produto("3", "PsP", 400.00)]
